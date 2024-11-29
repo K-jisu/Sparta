@@ -70,6 +70,7 @@
 
       let docs = await getDocs(collection(db, "albums"));
       docs.forEach((doc) => {
+        console.log(doc.data())
         let row = doc.data();
 
         let image = row.image;
