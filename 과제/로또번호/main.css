@@ -7,12 +7,40 @@ body {
   background-color: #f0f0f0;
 }
 
-/* 여기에 container 클래스에 대한 스타일을 추가하세요 */
+.container {
+  border: 1px solid #000;
+  border-radius: 10%;
+  width: 300px;
+  height: 230px;
+  text-align: center;
+  box-shadow: 2px 2px 5px 0px;
+}
 
 button {
   padding: 10px 20px;
   font-size: 16px;
   cursor: pointer;
+  border-radius: 10px;
+  box-shadow: 1px 1px 1px 0px;
+}
+#prenum {
+  text-decoration: line-through;
+}
+.numbers {
+  font-size: 1.2rem;
+  margin-top: 20px;
+  opacity: 0;
+  /* animation: showNum 1s ease-in 1s 1; */
+}
+.animation {
+  animation: showNum 1s ease-in forwards;
 }
 
-/* 여기에 numbers ID에 대한 스타일을 추가하세요 */
+@keyframes showNum {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
