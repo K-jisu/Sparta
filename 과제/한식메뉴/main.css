@@ -1,0 +1,21 @@
+body{
+  text-align: center;
+  align-items: center;
+}
+#container{
+  margin: 0 auto;
+  border: 1px solid #000;
+  width: 500px;
+  height: auto;
+}
+#section{
+  width: 100%;
+  height: auto;
+}
+.part{
+  border: 1px solid #000;
+  width: auto;
+  height: 150px;
+  margin-bottom: 20px;
+  border-radius: 5%;
+}
