@@ -40,9 +40,10 @@ label {
 
 input[type="radio"] {
     margin-right: 5px; 
+    cursor: pointer;
 }
 
-.submit-button {
+#submit-button {
     background-color: #007bff;
     color: #fff;
     border: none;
@@ -52,6 +53,9 @@ input[type="radio"] {
     cursor: pointer;
     margin-top: 15px; 
     transition: background-color 0.3s ease;
+}
+#submit-button:hover{
+    background-color: #002fff;
 }
 
 #result {
@@ -71,4 +75,8 @@ input[type="radio"] {
 #result p {
     font-size: 16px;
     color: #555;
+}
+
+.hide {
+    display: none;
 }
