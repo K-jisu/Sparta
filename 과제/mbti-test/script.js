@@ -20,15 +20,17 @@ const results = {
 
 // 사용자가 퀴즈를 완료했을 때 호출되는 함수
 function calculateResult() {
+    console.log("버튼이 눌렸습니다"); // <---- 이 부분을 추가해주세요!!!
+    document.getElementById("result").classList.remove("hide");
+
     // 퀴즈 폼 요소를 가져옴
-    const form = document.getElementById('#quiz-form');
+    const form = document.getElementById('quiz-form');
 
     // 각 MBTI 성향별로 점수를 저장할 객체
     let score = { E: 0, I: 0, S: 0, N: 0, T: 0, F: 0, J: 0, P: 0 };
     
     // 폼 데이터를 가져옴
-    const formData = new FormData(form);
-    
+    const formData = new FormData(form);    
     // 폼 데이터에 포함된 값을 기반으로 점수를 계산
     for (let value of formData.values()) {
         score[value] = score[value] + 1; // 각 성향에 해당하는 점수를 1씩 증가
@@ -45,7 +47,23 @@ function calculateResult() {
     }
 
     // S와 N, T와 F, J와 P 중 높은 점수를 가진 쪽을 선택하여 personalityType에 추가하는 코드를 작성해주세요!! 바로 위 로직을 참고하면 되겠죠?
+    if (score.S >= score.N) {
+        personalityType += 'S';
+    } else {
+        personalityType += 'N';
+    }
 
+    if (score.T >= score.F) {
+        personalityType += 'T';
+    } else {
+        personalityType += 'F';
+    }
+
+    if (score.J >= score.P) {
+        personalityType += 'J';
+    } else {
+        personalityType += 'P';
+    }
 
     document.getElementById('result-text').innerText = results[personalityType];
     document.getElementById('result').classList.remove('hide');

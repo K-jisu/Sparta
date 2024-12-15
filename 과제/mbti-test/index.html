@@ -6,8 +6,8 @@
     <title>MBTI테스트</title>
     <link rel="stylesheet" href="./style.css" />
   </head>
+  <script src="./script.js"></script>
   <body>
-    <script src="./script.js"></script>
     <div class="container">
       <h1>MBTI 테스트</h1>
       <form id="quiz-form">
@@ -38,12 +38,12 @@
           <label><input type="radio" name="q3" value="J" /> 계획성</label>
           <label><input type="radio" name="q3" value="P" /> 유연성</label>
         </div>
-        <button id="submit-button" type="button">결과 확인하기</button>
+        <button id="submit-button" type="button" onclick=calculateResult()>결과 확인하기</button>
       </form>
       <div id="result" class="hide">
         <h2>당신의 성격 유형은?</h2>
         <p id="result-text">결과가 여기에 표시됩니다.</p>
-        <button>다시 시작하기</button>
+        <button onclick=resetQuiz()>다시 시작하기</button>
       </div>
     </div>
   </body>
