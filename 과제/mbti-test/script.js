@@ -18,11 +18,16 @@ const results = {
   INFP: "당신은 이상적이고 성찰적인 중재자입니다! (INFP - 중재자)",
 };
 
+
 // 사용자가 퀴즈를 완료했을 때 호출되는 함수
 function calculateResult() {
-  alert("검사 완료!");
   // 퀴즈 폼 요소를 가져옴
   const form = document.getElementById("quiz-form");
+  // input태그의 type="radio"를 가지는 모든 폼을 배열로 만들어서 radios에 저장
+  const radios = Array.from(form.querySelectorAll(`input[type="radio"]`));
+  const radios1 = form.querySelectorAll(`input[type="radio"]`);
+  console.log(radios)
+  console.log(radios1)
 
   // 각 MBTI 성향별로 점수를 저장할 객체
   let score = { E: 0, I: 0, S: 0, N: 0, T: 0, F: 0, J: 0, P: 0 };
@@ -63,8 +68,24 @@ function calculateResult() {
     personalityType += "P";
   }
 
-  document.getElementById("result-text").innerText = results[personalityType];
-  document.getElementById("result").classList.remove("hide");
+  /** radio의 유효성 검사 */
+  const radioChecked = radios.every((item) => {
+    const arrRadios = Array.from(
+      form.querySelectorAll(`input[name="${item.name}"]`)
+    );
+    return arrRadios.some((item) => item.checked);
+  });
+  if (!radioChecked) {
+    alert("모든 문항에 체크해주세요!");
+    window.scroll({
+      top: 0,
+      behavior: "smooth",
+    });
+  } else {
+    alert("검사 완료!");
+    document.getElementById("result-text").innerText = results[personalityType];
+    document.getElementById("result").classList.remove("hide");
+  }
 }
 
 // 퀴즈를 초기 상태로 되돌리는 함수
