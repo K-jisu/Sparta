@@ -1,11 +1,41 @@
 document.addEventListener("DOMContentLoaded", () => {
   const menu = [
-    { name: "아메리카노", price: 4100 },
-    { name: "카페라떼", price: 4600 },
-    { name: "카푸치노", price: 4600 },
-    { name: "카라멜 마끼아또", price: 5800 },
-    { name: "자바 칩 프라푸치노", price: 6300 },
-    { name: "딸기 요거트 블렌디드", price: 6300 },
+    {
+      name: "아메리카노",
+      price: 4100,
+      image:
+        "https://image.istarbucks.co.kr/upload/store/skuimg/2021/04/[94]_20210430103337006.jpg",
+    },
+    {
+      name: "카페라떼",
+      price: 4600,
+      image:
+        "https://image.istarbucks.co.kr/upload/store/skuimg/2021/04/[41]_20210415133833725.jpg",
+    },
+    {
+      name: "카푸치노",
+      price: 4600,
+      image:
+        "https://image.istarbucks.co.kr/upload/store/skuimg/2021/04/[38]_20210415154821846.jpg",
+    },
+    {
+      name: "카라멜 마끼아또",
+      price: 5800,
+      image:
+        "https://image.istarbucks.co.kr/upload/store/skuimg/2021/04/[126197]_20210415154609863.jpg",
+    },
+    {
+      name: "자바 칩 프라푸치노",
+      price: 6300,
+      image:
+        "https://image.istarbucks.co.kr/upload/store/skuimg/2021/04/[168016]_20210415154152122.jpg",
+    },
+    {
+      name: "딸기 요거트 블렌디드",
+      price: 6300,
+      image:
+        "https://image.istarbucks.co.kr/upload/store/skuimg/2021/04/[9200000003276]_20210416154001403.jpg",
+    },
   ];
 
   let order = {};
@@ -22,31 +52,38 @@ document.addEventListener("DOMContentLoaded", () => {
   // 각 메뉴 아이템을 div 요소로 생성한 후 menuContainer에 추가하세요.
   // div 요소 안에는 메뉴 이름과 가격을 표시하는 span 태그,
   // 그리고 '주문 추가' 버튼을 추가해야 합니다.
-  menu.forEach((item) => {
-    const div = document.createElement("div");
-    const h2 = document.createElement("h2");
-    const span = document.createElement("span");
-    const btn = document.createElement("button");
+  menu.forEach((item, idx) => {
+    let temp = `<div class="drinks">
+          <img src="${item.image}"
+              alt="${item.name}">
+          <p class="name">${item.name}</p>
+          <p class="price">₩${item.price}</p>
+          <button data-index='${idx}'>+</button>
+          </div>`;
 
-    h2.textContent = item.name;
-    span.textContent = item.price;
-    btn.innerText = "주문 추가";
-
-    menuContainer.append(div);
-    div.append(h2, span, btn);
+    menuContainer.innerHTML += temp;
+    idx++;
   });
 
-  // '주문 추가' 버튼에는 각 메뉴 아이템의 인덱스를 data-index 속성으로 저장하여,
-  // 클릭 시 해당 메뉴를 식별할 수 있게 만드세요.
-
   // TODO-2: 주문 추가 로직을 작성하세요.
-  // 힌트: menuContainer에 이벤트 리스너를 추가하고, 이벤트가 발생한 대상이 버튼인지 확인합니다.
 
-  // 버튼의 data-index 속성을 이용해 어떤 메뉴가 클릭되었는지 파악한 후,
-  // 해당 메뉴의 수량을 증가시키거나 새로 추가하세요.
-
-  // 이후, 총 가격(totalPrice)을 업데이트하고,
-  // 주문 목록을 업데이트하는 updateOrderList 함수를 호출하세요.
+  menuContainer.addEventListener(`click`, (evn) => {
+    // 힌트: menuContainer에 이벤트 리스너를 추가하고, 이벤트가 발생한 대상이 버튼인지 확인합니다.
+    if (evn.target.tagName === `BUTTON`) {
+      let menuItem = evn.target.getAttribute(`data-index`); // 버튼의 data-index 속성을 이용해 어떤 메뉴가 클릭되었는지 파악한 후,
+      if (`${menu[menuItem].name}` in order) {
+        order[`${menu[menuItem].name}`].quantity += 1; // 해당 메뉴의 수량을 증가시키거나 새로 추가하세요.
+      } else {
+        order[`${menu[menuItem].name}`] = {
+          price: menu[menuItem].price,
+          quantity: 0,
+        };
+        order[`${menu[menuItem].name}`].quantity += 1;
+      }
+      totalPrice += order[`${menu[menuItem].name}`].price; // 이후, 총 가격(totalPrice)을 업데이트하고,
+      updateOrderList(); // 주문 목록을 업데이트하는 updateOrderList 함수를 호출하세요.
+    }
+  });
 
   // 예시 코드:
   // menu.forEach((item, index) => {
@@ -69,7 +106,7 @@ document.addEventListener("DOMContentLoaded", () => {
               ${itemName} - ₩${orderItem.price.toLocaleString()} x${
         orderItem.quantity
       }
-              <button class="remove" data-item="${itemName}">삭제</button>
+              <button class="remove" data-item="${itemName}">X</button>
           `;
       orderList.appendChild(orderItemElement);
     }
