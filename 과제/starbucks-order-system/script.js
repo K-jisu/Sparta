@@ -54,12 +54,12 @@ document.addEventListener("DOMContentLoaded", () => {
   // 그리고 '주문 추가' 버튼을 추가해야 합니다.
   menu.forEach((item, idx) => {
     let temp = `<div class="drinks">
-          <img src="${item.image}"
-              alt="${item.name}">
-          <p class="name">${item.name}</p>
-          <p class="price">₩${item.price}</p>
-          <button data-index='${idx}'>+</button>
-          </div>`;
+            <img src="${item.image}"
+                alt="${item.name}">
+            <p class="name">${item.name}</p>
+            <p class="price">₩${item.price}</p>
+            <button data-index='${idx}'>+</button>
+            </div>`;
 
     menuContainer.innerHTML += temp;
     idx++;
@@ -103,11 +103,11 @@ document.addEventListener("DOMContentLoaded", () => {
       const orderItem = order[itemName];
       const orderItemElement = document.createElement("li");
       orderItemElement.innerHTML = `
-              ${itemName} - ₩${orderItem.price.toLocaleString()} x${
+                ${itemName} - ₩${orderItem.price.toLocaleString()} x${
         orderItem.quantity
       }
-              <button class="remove" data-item="${itemName}">X</button>
-          `;
+                <button class="remove" data-item="${itemName}">X</button>
+            `;
       orderList.appendChild(orderItemElement);
     }
     totalPriceElement.textContent = totalPrice.toLocaleString();

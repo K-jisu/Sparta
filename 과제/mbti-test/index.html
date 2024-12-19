@@ -4,15 +4,18 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>MBTI Test</title>
-    <link href="style.css" rel="stylesheet" />
+    <link href="styles.css" rel="stylesheet" />
   </head>
-  <script defer src="script.js"></script>
+  <script src="script.js" defer></script>
 
   <body>
     <section id="title">
       <h1 id="TITLE">
-        나의 MBTI는?<br /><button class="button">
-          <a href="#quiz-form">지금 확인하기</a>
+        나의 MBTI는?<br /><button
+          class="button"
+          onclick="goToSection('quiz-form')"
+        >
+          지금 확인하기
         </button>
       </h1>
       <img
@@ -53,11 +56,21 @@
             /><br />
             어? 좀 그런데...</label
           >
-          <button class="button" id="left_bt">
-            <a href="#TITLE">&#129144;</a>
+          <button
+            class="button"
+            id="left_bt"
+            type="button"
+            onclick="goToSection('TITLE')"
+          >
+            &#129144;
           </button>
-          <button class="button" id="right_bt">
-            <a href="#qu2">&#129146;</a>
+          <button
+            class="button"
+            id="right_bt"
+            type="button"
+            onclick="goToSection('qu2')"
+          >
+            &#129146;
           </button>
         </div>
 
@@ -91,11 +104,11 @@
             /><br />
             망상의 폭주</label
           >
-          <button class="button" id="left_bt">
-            <a href="#qu1">&#129144;</a>
+          <button class="button" id="left_bt" onclick="goToSection('qu1')">
+            &#129144;
           </button>
-          <button class="button" id="right_bt">
-            <a href="#qu3">&#129146;</a>
+          <button class="button" id="right_bt" onclick="goToSection('qu3')">
+            &#129146;
           </button>
         </div>
 
@@ -129,11 +142,11 @@
             /><br />
             왜? 무슨일인데, 왜 우울해?</label
           >
-          <button class="button" id="left_bt">
-            <a href="#qu2">&#129144;</a>
+          <button class="button" id="left_bt" onclick="goToSection('qu2')">
+            &#129144;
           </button>
-          <button class="button" id="right_bt">
-            <a href="#qu4">&#129146;</a>
+          <button class="button" id="right_bt" onclick="goToSection('qu4')">
+            &#129146;
           </button>
         </div>
 
@@ -167,11 +180,11 @@
             /><br />
             몸이 이끄는 여행</label
           >
-          <button class="button" id="left_bt">
-            <a href="#qu3">&#129144;</a>
+          <button class="button" id="left_bt" onclick="goToSection('qu3')">
+            &#129144;
           </button>
-          <button class="button" id="right_bt">
-            <a href="#qu5">&#129146;</a>
+          <button class="button" id="right_bt" onclick="goToSection('qu5')">
+            &#129146;
           </button>
         </div>
 
@@ -205,11 +218,11 @@
             /><br />
             방구석 1열에서 영화 관람</label
           >
-          <button class="button" id="left_bt">
-            <a href="#qu4">&#129144;</a>
+          <button class="button" id="left_bt" onclick="goToSection('qu4')">
+            &#129144;
           </button>
-          <button class="button" id="right_bt">
-            <a href="#qu6">&#129146;</a>
+          <button class="button" id="right_bt" onclick="goToSection('qu6')">
+            &#129146;
           </button>
         </div>
 
@@ -244,11 +257,11 @@
             비행기가 추락하면 어쩌지.<br />
             비상구 자리에 앉을까?</label
           >
-          <button class="button" id="left_bt">
-            <a href="#qu5">&#129144;</a>
+          <button class="button" id="left_bt" onclick="goToSection('qu5')">
+            &#129144;
           </button>
-          <button class="button" id="right_bt">
-            <a href="#qu7">&#129146;</a>
+          <button class="button" id="right_bt" onclick="goToSection('qu7')">
+            &#129146;
           </button>
         </div>
 
@@ -282,11 +295,11 @@
             /><br />
             어머! 많이 다쳤어? 괜찮아?</label
           >
-          <button class="button" id="left_bt">
-            <a href="#qu6">&#129144;</a>
+          <button class="button" id="left_bt" onclick="goToSection('qu6')">
+            &#129144;
           </button>
-          <button class="button" id="right_bt">
-            <a href="#qu8">&#129146;</a>
+          <button class="button" id="right_bt" onclick="goToSection('qu8')">
+            &#129146;
           </button>
         </div>
 
@@ -320,11 +333,11 @@
             /><br />
             빨리 끝내야하니 <br />일주일전에 제출해야지!</label
           >
-          <button class="button" id="left_bt">
-            <a href="#qu7">&#129144;</a>
+          <button class="button" id="left_bt" onclick="goToSection('qu7')">
+            &#129144;
           </button>
-          <button class="button" id="right_bt">
-            <a href="#qu9">&#129146;</a>
+          <button class="button" id="right_bt" onclick="goToSection('qu9')">
+            &#129146;
           </button>
         </div>
 
@@ -358,11 +371,11 @@
             /><br />
             나중에 또 볼테니 굳이 <br />아는 척하지 않는다.</label
           >
-          <button class="button" id="left_bt">
-            <a href="#qu8">&#129144;</a>
+          <button class="button" id="left_bt" onclick="goToSection('qu8')">
+            &#129144;
           </button>
-          <button class="button" id="right_bt">
-            <a href="#qu10">&#129146;</a>
+          <button class="button" id="right_bt" onclick="goToSection('qu10')">
+            &#129146;
           </button>
         </div>
 
@@ -396,11 +409,11 @@
             /><br />
             인간이 젤리라면 같은 <br />터무니 없는 상상을 한다</label
           >
-          <button class="button" id="left_bt">
-            <a href="#qu9">&#129144;</a>
+          <button class="button" id="left_bt" onclick="goToSection('qu9')">
+            &#129144;
           </button>
-          <button class="button" id="right_bt">
-            <a href="#qu11">&#129146;</a>
+          <button class="button" id="right_bt" onclick="goToSection('qu11')">
+            &#129146;
           </button>
         </div>
 
@@ -436,11 +449,11 @@
             /><br />
             헐 무서웠겠다</label
           >
-          <button class="button" id="left_bt">
-            <a href="#qu10">&#129144;</a>
+          <button class="button" id="left_bt" onclick="goToSection('qu10')">
+            &#129144;
           </button>
-          <button class="button" id="right_bt">
-            <a href="#qu12">&#129146;</a>
+          <button class="button" id="right_bt" onclick="goToSection('qu12')">
+            &#129146;
           </button>
         </div>
 
@@ -474,11 +487,16 @@
             /><br />
             누워서 핸드폰 본다.</label
           >
-          <button class="button" id="left_bt">
-            <a href="#qu11">&#129144;</a>
+          <button class="button" id="left_bt" onclick="goToSection('qu11')">
+            &#129144;
           </button>
-          <button class="button" id="right_bt">
-            <a href="#submit-button">&#129146;</a>
+          <button
+            class="button"
+            id="right_bt"
+            type="button"
+            onclick="goToResult('submit-button')"
+          >
+            &#129146;
           </button>
         </div>
 

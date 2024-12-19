@@ -1,10 +1,13 @@
 /* Importing Googole fonts */
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700;800&display=swap');
+
 @keyframes appear {
     from {
         opacity: 0;
-    } to {
+    }
+
+    to {
         opacity: 1;
     }
 }
@@ -33,6 +36,8 @@ body {
     text-align: center;
     margin: 0;
     padding: 20px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 #title {
@@ -98,7 +103,7 @@ h1 {
 }
 
 .question p {
-    font-size: 25px;
+    font-size: 40px;
     font-weight: 700;
     text-align: center;
     margin-bottom: 60px;
@@ -109,13 +114,23 @@ h1 {
 .question button {
     color: #ffe45b;
     background: none;
-    font-size: 30px;
+    font-size: 40px;
+}
+
+#left_bt {
+    float: left;
+    margin-left: 20px;
+}
+
+#right_bt {
+    float: right;
+    margin-right: 20px;
 }
 
 .question button:hover {
     color: #c7af36;
     background: none;
-    font-size: 30px;
+    font-size: 40px;
 }
 
 label {
@@ -127,7 +142,7 @@ label {
     align-content: center;
     font-size: 16px;
     cursor: pointer;
-    margin: auto 20px auto 20px;
+    margin: auto 20px 0 20px;
     font-weight: 700;
     line-height: 25px;
     padding-bottom: 10px;
@@ -144,15 +159,9 @@ label:active {
     background-color: #ffad76;
 
 }
-.clicked{
-  background-color: #ffad76;
-  pointer-events: none;
-}
 
-
-.input:checked+label {
-    transform: scale(0.9);
-    background-color: #ffad76
+.question input[type="radio"]:checked+label {
+    background-color: #ffad76;
 }
 
 input[type="radio"] {
@@ -170,6 +179,7 @@ input[type="radio"] {
     cursor: pointer;
     margin-top: 15px;
     transition: background-color 0.3s ease;
+
 }
 
 #submit-button:hover {
@@ -228,4 +238,9 @@ div {
     animation: appear 5s linear;
     animation-timeline: view();
     animation-range: entry 30%;
+}
+
+.clicked {
+    background-color: #ffad76;
+    pointer-events: none;
 }
