@@ -76,10 +76,10 @@ div {
 .top:before {
   background-image: url("https://images.unsplash.com/photo-1543324035-47e8e6a9f6b4?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
   position: absolute;
-  top: 1;
   z-index: -1;
-  width: inherit;
   height: 100%;
+  width: inherit;
+  background-size: cover;
   filter: blur(3.5px);
   content: "";
 }
@@ -123,9 +123,6 @@ h2 {
   letter-spacing: 3px;
 }
 
-/* 여기에 #menu와 #order-summary의 스타일을 추가하세요. */
-/* 버튼과 관련된 스타일은 아래의 예시를 참고하여 완성하세요. */
-
 button {
   background-color: #045744;
   color: white;
@@ -149,8 +146,9 @@ button:active {
 }
 
 #menu {
-  padding: 100px 0 30px 30px;
-  margin: 0 0 200px 70px;
+  padding: 0 0 30px 0;
+  margin: 0 0 200px 0;
+  text-align: center;
 }
 
 h3 {
@@ -165,10 +163,6 @@ h3 {
   color: #2d2b28;
   margin-left: auto;
   margin-right: auto;
-}
-
-#summary h3 {
-  margin-left: 70px;
 }
 
 .drinks {
@@ -202,13 +196,14 @@ h3 {
 }
 
 #order-summary {
-  margin: 0 100px 200px 100px;
+  margin: 0 auto 200px auto;
   background-color: #d0b9a5;
   border-radius: 10px;
   padding: 30px;
   font-family: "Noto Sans KR", serif;
   font-size: 25px;
   font-weight: 700;
+  max-width: 1900px;
 }
 
 #submit-order {
@@ -249,7 +244,3 @@ button.remove:active {
   padding-bottom: 50px;
   color: #876243;
 }
-
-/* #order-summary p {
-    
-} */
