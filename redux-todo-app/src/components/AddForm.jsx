@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
-import { addTodo } from "../redux/modules/todos";
+import { addtodo } from "../redux/slices/todosSlice";
+// import { addTodo } from "../redux/modules/todos";
 
 const AddForm = () => {
   const [todo, setTodo] = useState("");
@@ -16,7 +17,7 @@ const AddForm = () => {
       <button
         onClick={() => {
           dispatch(
-            addTodo({
+            addtodo({
               id: new Date().getTime(),
               title: todo,
             })
