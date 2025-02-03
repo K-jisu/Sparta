@@ -1,7 +1,8 @@
 import { useDispatch, useSelector } from "react-redux";
-import { addNumber, removeNumber } from "./redux/modules/counter";
+// import { addNumber, removeNumber } from "./redux/modules/counter";
 import "./App.css";
 import { useState } from "react";
+import { addNumber, removeNumber } from "./redux/slices/counterSlice";
 
 function App() {
   const [count, setCount] = useState(0);
