@@ -8,7 +8,7 @@ const Home = () => {
       <h1>home 컴포넌트 입니다.</h1>
       <button
         onClick={() => {
-          navigate("/works");
+          navigate("/Works");
         }}
       ></button>
     </div>
